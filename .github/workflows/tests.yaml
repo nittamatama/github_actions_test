@@ -5,12 +5,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep && echo "job1"
+      - run: sleep 10 && echo "job1"
   job2:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep && echo "job2"
+      - run: sleep 10 && echo "job2"
   job3:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep && echo "job3"
+      - run: sleep 10 && echo "job3"
