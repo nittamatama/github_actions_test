@@ -15,4 +15,4 @@ jobs:
     steps:
       - env:
           RESULT: ${{ needs.before_job.outputs.result }} # outputsで依存関係のジョブの出力を参照
-      run: echo $"{RESULT}"
+      run: echo $RESULT
