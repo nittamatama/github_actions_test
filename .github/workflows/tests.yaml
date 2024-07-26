@@ -5,14 +5,10 @@ jobs:
   before_job: # 最初に実行
     runs-on: ubuntu-latest
     steps:
-      - id: generate # ステップID
-        run: echo "result=HELLO" >> "${GITHUB_OUTPUT}"
-    outputs:
-      ghop_result: ${{ steps.generate.outputs.result }}
-  after_job: # 最初に実行
+        - run: echo "RESULT=HELLO" >> "${GITHUB_ENV}"
+        - run: echo "${RESULT}"
+  after_job:
     runs-on: ubuntu-latest
     needs: before_job # 依存関係のジョブを定義
     steps:
-      - env:
-          RESULT: ${{ needs.before_job.outputs.ghop_result }} # outputsで依存関係のジョブの出力を参照
-        run: echo $RESULT
+        - run: echo $RESULT
