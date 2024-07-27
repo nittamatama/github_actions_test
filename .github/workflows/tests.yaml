@@ -15,4 +15,4 @@ jobs:
       env:
         MY_STATE: ${{ steps.set-state.MY_STATE }}
       run: |
-        echo "The state is ${{ steps.set-state.MY_STATE }}"
+        echo "The state is ${{ steps.env.MY_STATE }}"
