@@ -13,6 +13,6 @@ jobs:
 
     - name: Get MY_STATE
       env:
-        MY_STATE: ${{ steps.set_state.MY_STATE }}
+        MY_STATE: ${{ steps.set-state.MY_STATE }}
       run: |
         echo "The state is ${{ steps.set-state.MY_STATE }}"
