@@ -7,9 +7,12 @@ jobs:
 
     steps:
     - name: Set state
+      id: set-state
       run: |
         echo "MY_STATE=some_value" >> $GITHUB_STATE
+      outputs:
+        result: ${{ steps.set-state.outputs.MY_STATE }}
 
     - name: Get state
       run: |
-        echo "The state is ${{ state.MY_STATE }}"
+        echo "The state is ${{ steps.set-state.outputs.result }}"
