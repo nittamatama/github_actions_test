@@ -10,9 +10,7 @@ jobs:
       id: set-state
       run: |
         echo "MY_STATE=some_value" >> $GITHUB_STATE
-    outputs:
-      result: ${{ steps.set-state.outputs.MY_STATE }}
 
-    - name: Get state
+    - name: Get MY_STATE
       run: |
-        echo "The state is ${{ steps.set-state.outputs.result }}"
+        echo "The state is ${{ steps.set-state.MY_STATE }}"
