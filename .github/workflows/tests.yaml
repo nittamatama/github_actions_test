@@ -8,13 +8,6 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Set state
-      id: set-state
+    - name: sleep
       run: |
-        echo "MY_STATE=値" >> $GITHUB_STATE
-
-    - name: Get MY_STATE
-      env:
-        MY_STATE: ${{ steps.set-state.outputs.MY_STATE }}
-      run: |
-        echo "The state is ${{ steps.env.MY_STATE }}"
+        sleep 30
